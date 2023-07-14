@@ -32,12 +32,12 @@ inputs:
     default: 180
     
 env:
-  SOLANA_CLI_VERSION: ${{ github.solana_cli_version }}
-  NODE_VERSION: ${{ github.node_version }}
-  ANCHOR_VERSION: ${{ github.anchor_version }}
-  SOLANA_RPC: ${{ github.solana_rpc }}
-  PYTHON_VERSION: ${{ github.python_version }}
-  TEST_TIMEOUT: ${{ github.test_timeout }}
+  SOLANA_CLI_VERSION: ${{ github.event.inputs.solana_cli_version }}
+  NODE_VERSION: ${{ github.event.inpus.node_version }}
+  ANCHOR_VERSION: ${{ github.event.inputs.anchor_version }}
+  SOLANA_RPC: ${{ github.event.inputs.solana_rpc }}
+  PYTHON_VERSION: ${{ github.event.inputs.python_version }}
+  TEST_TIMEOUT: ${{ github.event.inputs.test_timeout }}
   CARGO_CACHE_PATH: |
     ~/.cargo/bin/
     ~/.cargo/registry/index/
