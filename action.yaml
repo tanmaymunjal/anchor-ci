@@ -23,12 +23,17 @@ on:
         required: false
         type: string
         default: localhost
+      test_timeout:
+        required: false
+        type: string
+        default: 180
 env:
   SOLANA_CLI_VERSION: ${{ inputs.solana_cli_version }}
   NODE_VERSION: ${{ inputs.node_version }}
   ANCHOR_VERSION: ${{ inputs.anchor_version }}
   SOLANA_RPC: ${{ inputs.solana_rpc }}
   PYTHON_VERSION: ${{ inputs.python_version }}
+  TEST_TIMEOUT: ${{ inputs.test_timeout }}
   CARGO_CACHE_PATH: |
     ~/.cargo/bin/
     ~/.cargo/registry/index/
@@ -40,7 +45,7 @@ jobs:
   test-formatting:
     name: Testing formatting of contracts and test suite
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: ${{ env.TEST_TIMEOUT }}
     steps:
       - uses: actions/checkout@v3
       - uses: ./actions/setup/
@@ -54,7 +59,7 @@ jobs:
   test-contracts:
     name: Test contracts
     runs-on: ubuntu-latest
-    timeout-minutes: 180
+    timeout-minutes: ${{ env.TEST_TIMEOUT }}
     steps:
       - uses: actions/checkout@v3
       - uses: ./actions/setup/
