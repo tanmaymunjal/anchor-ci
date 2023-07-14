@@ -1,7 +1,9 @@
 name: anchor-buildx
 description: This is an action to automate building and testing Anchor(Solana) programs
 author: Tanmay Munjal
-
+branding:
+  icon: 'anchor'
+  color: 'gray-dark'
 on:
   workflow_call:
     inputs:
