@@ -1,4 +1,6 @@
-name: Tests
+name: anchor-ci
+description: This is an action to automate building and testing Anchor(Solana) programs
+author: Tanmay Munjal
 
 on:
   workflow_call:
