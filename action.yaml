@@ -1,4 +1,4 @@
-name: anchor-ci
+name: anchor-buildx
 description: This is an action to automate building and testing Anchor(Solana) programs
 author: Tanmay Munjal
 
