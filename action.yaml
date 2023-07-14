@@ -4,33 +4,33 @@ author: Tanmay Munjal
 branding:
   icon: 'anchor'
   color: 'gray-dark'
-on:
-  workflow_call:
-    inputs:
-      solana_cli_version:
-        required: false
-        type: string
-        default: 1.14.20
-      node_version:
-        required: false
-        type: string
-        default: 17.0.1
-      anchor_version:
-        required: false
-        type: string
-        default: 0.28.0
-      python_version:
-        required: false
-        type: string
-        default: 3.10.6
-      solana_rpc:
-        required: false
-        type: string
-        default: localhost
-      test_timeout:
-        required: false
-        type: string
-        default: 180
+
+inputs:
+  solana_cli_version:
+    required: false
+    type: string
+    default: 1.14.20
+  node_version:
+    required: false
+    type: string
+    default: 17.0.1
+  anchor_version:
+    required: false
+    type: string
+    default: 0.28.0
+  python_version:
+    required: false
+    type: string
+    default: 3.10.6
+  solana_rpc:
+    required: false
+    type: string
+    default: localhost
+  test_timeout:
+    required: false
+    type: string
+    default: 180
+    
 env:
   SOLANA_CLI_VERSION: ${{ inputs.solana_cli_version }}
   NODE_VERSION: ${{ inputs.node_version }}
